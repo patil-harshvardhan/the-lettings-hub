@@ -13,7 +13,7 @@ const HobbiesCarousel = () => {
     {
       name: "Mountain Treks",
       description:
-        "I have trekked most of the Sahyadri mountain range in Maharashtra, India. I wish to treak more mountains in the future.",
+        "I have trekked most of the Sahyadri mountain range in Maharashtra, India. I wish to trek more mountains in the future.",
       image: "https://auctionimages.blob.core.windows.net/lettinghub/IMG_4061.JPG",
     },
     {
@@ -47,8 +47,14 @@ const HobbiesCarousel = () => {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <div className="max-w-xl bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <div className="p-5">
+        <div className="relative max-w-2xl bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <button
+            className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-500 text-white p-2 rounded-full hover:bg-gray-600"
+            onClick={handlePrev}
+          >
+            &#10094;
+          </button>
+          <div className="p-6">
             <a href="#">
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white font-[family-name:var(--font-geist-mono)]">
                 {hobbies[currentIndex].name}
@@ -65,7 +71,14 @@ const HobbiesCarousel = () => {
               {hobbies[currentIndex].description}
             </p>
           </div>
+          <button
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-500 text-white p-2 rounded-full hover:bg-gray-600"
+            onClick={handleNext}
+          >
+            &#10095;
+          </button>
         </div>
+        <div className='font-[family-name:var(--font-geist-mono)]'> Page {currentIndex + 1}/{hobbies.length}</div>
       </main>
     </div>
   );
