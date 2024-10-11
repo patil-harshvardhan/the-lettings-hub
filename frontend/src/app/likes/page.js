@@ -8,25 +8,25 @@ const HobbiesCarousel = () => {
       name: "Motorbike rides",
       description:
         "I like riding motorbikes and exploring new places on two wheels. The farthest I have travelled is southern India from Belagavi to Kanyakumari on my bike (Almost 1600 miles).",
-      image: "/images/motorbike.jpg", // Replace with actual image paths
+      image: "https://auctionimages.blob.core.windows.net/lettinghub/IMG_4061.JPG",
     },
     {
       name: "Mountain Treks",
       description:
-        "Experience the tranquility of nature on rugged mountain trails.",
-      image: "/images/mountain.jpg",
+        "I have trekked most of the Sahyadri mountain range in Maharashtra, India. I wish to treak more mountains in the future.",
+      image: "https://auctionimages.blob.core.windows.net/lettinghub/IMG_4061.JPG",
     },
     {
-      name: "Hackathons",
+      name: "Cooking",
       description:
-        "Solve challenges, build innovative solutions, and compete with the best.",
-      image: "/images/hackathon.jpg",
+        "I almost always cook my own meals, My speciality is Indian cuisine.",
+      image: "https://auctionimages.blob.core.windows.net/lettinghub/IMG_4061.JPG",
     },
     {
       name: "Football",
       description:
-        "Enjoy the beautiful game with friends or watch your favorite teams.",
-      image: "/images/football.jpg",
+        "Whenever I find some time to spare, I like to go out and play football. I am not a great player but I enjoy the game.",
+      image: "https://auctionimages.blob.core.windows.net/lettinghub/IMG_4061.JPG",
     },
   ];
 
@@ -47,22 +47,22 @@ const HobbiesCarousel = () => {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <div className="max-w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <a href="#">
-            <img
-              className="rounded-t-lg"
-              src="/docs/images/blog/image-1.jpg"
-              alt=""
-            />
-          </a>
+        <div className="max-w-xl bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <div className="p-5">
             <a href="#">
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white font-[family-name:var(--font-geist-mono)]">
                 {hobbies[currentIndex].name}
               </h5>
             </a>
-            <p className="mb-3 text-gray-700 dark:text-gray-400 max-w-4xl font-[family-name:var(--font-geist-mono)]">
-                {hobbies[currentIndex].description}
+            <a href="#">
+              <img
+                className="rounded-t-lg mb-2"
+                src={hobbies[currentIndex].image}
+                alt={hobbies[currentIndex].name}
+              />
+            </a>
+            <p className="mb-3 text-gray-700 dark:text-gray-400 font-[family-name:var(--font-geist-mono)]">
+              {hobbies[currentIndex].description}
             </p>
           </div>
         </div>
