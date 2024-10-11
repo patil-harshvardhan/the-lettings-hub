@@ -2,32 +2,20 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-const HobbiesCarousel = () => {
+const AchivementsCarousel = () => {
   const hobbies = [
     {
-      name: "Motorbike rides",
+      name: "Winner Smart India Hackathon 2020",
       description:
-        "I like riding motorbikes and exploring new places on two wheels. The farthest I have travelled is southern India from Belagavi to Kanyakumari on my bike (Almost 1600 miles on a single trip).",
+        "I like riding motorbikes and exploring new places on two wheels. The farthest I have travelled is southern India from Belagavi to Kanyakumari on my bike (Almost 1600 miles).",
       image: "https://auctionimages.blob.core.windows.net/lettinghub/IMG_4061.JPG",
     },
     {
-      name: "Mountain Treks",
+      name: "Eyantra Robotics Finalist",
       description:
         "I have trekked most of the Sahyadri mountain range in Maharashtra, India. I wish to trek more mountains in the future.",
       image: "https://auctionimages.blob.core.windows.net/lettinghub/IMG_4061.JPG",
-    },
-    {
-      name: "Cooking",
-      description:
-        "I almost always cook my own meals, My speciality is Indian cuisine and recently I have started experimenting with other cuisines.",
-      image: "https://auctionimages.blob.core.windows.net/lettinghub/IMG_4061.JPG",
-    },
-    {
-      name: "Football",
-      description:
-        "Whenever I find some time to spare, I like to go out and play football. I am not a great player but I enjoy the game. I also like to watch football matches and love the football culture in the UK.",
-      image: "https://auctionimages.blob.core.windows.net/lettinghub/IMG_4061.JPG",
-    },
+    }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -57,7 +45,7 @@ const HobbiesCarousel = () => {
           <div className="p-6">
             <a href="#">
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white font-[family-name:var(--font-geist-mono)]">
-                {currentIndex+1}. {hobbies[currentIndex].name}
+                {hobbies[currentIndex].name}
               </h5>
             </a>
             <a href="#">
@@ -84,4 +72,4 @@ const HobbiesCarousel = () => {
   );
 };
 
-export default HobbiesCarousel;
+export default AchivementsCarousel;
