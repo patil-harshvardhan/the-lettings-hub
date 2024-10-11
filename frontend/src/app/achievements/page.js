@@ -1,37 +1,37 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import axios from "axios";
 import Loader from "../utils";
+import axios from "axios";
 
-const HobbiesCarousel = () => {
-  const [hobbies, setHobbies] = useState(null);
+const AchievementsCarousel = () => {
+  const [achievements, setAchievements] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === hobbies.length - 1 ? 0 : prevIndex + 1
+      prevIndex === achievements.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? hobbies.length - 1 : prevIndex - 1
+      prevIndex === 0 ? achievements.length - 1 : prevIndex - 1
     );
   };
 
-  const getHobbies = () => {
-    axios.get("http://localhost:8000/hobbies").then((response) => {
-      if(response.status == 200) 
-        setHobbies(response.data);
+  const getAchievements = () => {
+    axios.get("http://localhost:8000/achievements").then((response) => {
+      if (response.status == 200)
+        setAchievements(response.data);
     });
   };
 
   useEffect(() => {
-    getHobbies();
+    getAchievements();
   });
 
-  return hobbies === null ? (
+  return achievements === null ? (
     <Loader />
   ) : (
     <>
@@ -45,18 +45,18 @@ const HobbiesCarousel = () => {
         <div className="p-6">
           <a href="#">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white font-[family-name:var(--font-geist-mono)]">
-              {currentIndex + 1}. {hobbies[currentIndex].name}
+              {currentIndex + 1}. {achievements[currentIndex].name}
             </h5>
           </a>
-          <a href="#" className="flex justify-center items-center">
+          <a href="#" className="w-full flex justify-center items-center">
             <img
               className="rounded-t-lg mb-2 max-h-96"
-              src={hobbies[currentIndex].image}
-              alt={hobbies[currentIndex].name}
+              src={achievements[currentIndex].image}
+              alt={achievements[currentIndex].name}
             />
           </a>
           <p className="mb-3 text-gray-700 dark:text-gray-400 font-[family-name:var(--font-geist-mono)]">
-            {hobbies[currentIndex].description}
+            {achievements[currentIndex].description}
           </p>
         </div>
         <button
@@ -68,10 +68,10 @@ const HobbiesCarousel = () => {
       </div>
       <div className="font-[family-name:var(--font-geist-mono)]">
         {" "}
-        Page {currentIndex + 1}/{hobbies.length}
+        Page {currentIndex + 1}/{achievements.length}
       </div>
     </>
   );
 };
 
-export default HobbiesCarousel;
+export default AchievementsCarousel;

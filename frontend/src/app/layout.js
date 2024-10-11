@@ -40,10 +40,10 @@ export default function RootLayout({ children }) {
             </a>
             <a
               className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-              href="/achivements"
+              href="/achievements"
             >
               <FaStar />
-              My Achivements
+              My Achievements
             </a>
             <a
               className="flex items-center gap-2 hover:underline hover:underline-offset-4"
