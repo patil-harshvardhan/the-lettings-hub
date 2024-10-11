@@ -7,30 +7,30 @@ const HobbiesCarousel = () => {
     {
       name: "Motorbike rides",
       description:
-        "I like riding motorbikes and exploring new places on two wheels. The farthest I have travelled is southern India from Belagavi to Kanyakumari on my bike (Almost 1600 miles on a single trip).",
+        "I like riding motorbikes and exploring new places on two wheels. The farthest I have travelled is southern India from Belagavi to Kanyakumari on my bike (Almost 1600 miles on a single trip). And thats my bike Yamaha MT-15 it was awesome!",
       image:
-        "https://auctionimages.blob.core.windows.net/lettinghub/IMG_4061.JPG",
+        "https://auctionimages.blob.core.windows.net/lettinghub/IMG_20211225_170725.jpg",
     },
     {
       name: "Mountain Treks",
       description:
         "I have trekked most of the Sahyadri mountain range in Maharashtra, India. I wish to trek more mountains in the future.",
       image:
-        "https://auctionimages.blob.core.windows.net/lettinghub/IMG_4061.JPG",
+        "https://auctionimages.blob.core.windows.net/lettinghub/IMG_20221228_095510.jpg",
     },
     {
       name: "Cooking",
       description:
-        "I almost always cook my own meals, My speciality is Indian cuisine and recently I have started experimenting with other cuisines.",
+        "I almost always cook my own meals, My speciality is Indian cuisine and recently I have started experimenting with other cuisines (The above one is an example).",
       image:
         "https://auctionimages.blob.core.windows.net/lettinghub/IMG_4061.JPG",
     },
     {
       name: "Football",
       description:
-        "Whenever I find some time to spare, I like to go out and play football. I am not a great player but I enjoy the game. I also like to watch football matches and love the football culture in the UK.",
+        "Whenever I find some time to spare, I like to go out and play football. I am not a great player but I enjoy the game. I also like to watch football matches. Am I united fan ? :( I am! ",
       image:
-        "https://auctionimages.blob.core.windows.net/lettinghub/IMG_4061.JPG",
+        "https://auctionimages.blob.core.windows.net/lettinghub/0876f316-d4fa-4005-b111-3824d398e6fb.jpg",
     },
   ];
 
@@ -63,9 +63,9 @@ const HobbiesCarousel = () => {
               {currentIndex + 1}. {hobbies[currentIndex].name}
             </h5>
           </a>
-          <a href="#">
+          <a href="#" className="flex justify-center items-center">
             <img
-              className="rounded-t-lg mb-2"
+              className="rounded-t-lg mb-2 max-h-96"
               src={hobbies[currentIndex].image}
               alt={hobbies[currentIndex].name}
             />
