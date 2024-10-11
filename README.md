@@ -1,8 +1,8 @@
-# Project Name
+# My Intro
 
-## Overview
+## How to run ?
 
-This project is set up using Docker Compose to simplify the process of building and running containers. The only command you need to run is:
+All you need to do to run this project is use this command. It will run the backend frontend and the DB for you :)
 
 ```bash
 sudo docker compose up --build
