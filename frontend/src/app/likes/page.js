@@ -29,7 +29,7 @@ const HobbiesCarousel = () => {
 
   useEffect(() => {
     getHobbies();
-  });
+  },[]);
 
   return hobbies === null ? (
     <Loader />

@@ -67,7 +67,7 @@ def init_db():
                 "description":
                     "Secured 4th place in the nationwide Eyantra Robotics hackathon hosted by IIT Bombay. Collaborated in a team to design and build a robot for the Nutty Squirrel challenge over a six-month period. Engineered a solution that demonstrated innovative robotics applications in simulated real-world problem-solving.",
                 "image":
-                    "https://auctionimages.blob.core.windows.net/lettinghub/IMG_4312.JPG",
+                    "https://auctionimages.blob.core.windows.net/lettinghub/5ebb6cbf-5fc0-4ed8-a8a0-346d8c103cc8.JPG",
             },
         ]
 

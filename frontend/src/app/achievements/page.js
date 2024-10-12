@@ -29,7 +29,7 @@ const AchievementsCarousel = () => {
 
   useEffect(() => {
     getAchievements();
-  });
+  },[]);
 
   return achievements === null ? (
     <Loader />
