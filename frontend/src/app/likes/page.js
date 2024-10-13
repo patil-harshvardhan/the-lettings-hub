@@ -1,77 +1,66 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "./styles.css";
+import { Mousewheel, Pagination } from "swiper/modules";
 import axios from "axios";
 import Loader from "../utils";
 
-const HobbiesCarousel = () => {
+export default function App() {
   const [hobbies, setHobbies] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === hobbies.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? hobbies.length - 1 : prevIndex - 1
-    );
-  };
-
   const getHobbies = () => {
     axios.get("http://localhost:8000/hobbies").then((response) => {
-      if(response.status == 200) 
-        setHobbies(response.data);
+      if (response.status == 200) setHobbies(response.data);
     });
   };
 
   useEffect(() => {
     getHobbies();
-  },[]);
+  }, []);
 
-  return hobbies === null ? (
-    <Loader />
-  ) : (
+  return (
     <>
-      <div className="relative max-w-2xl bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <button
-          className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-500 text-white p-2 rounded-full hover:bg-gray-600"
-          onClick={handlePrev}
-        >
-          &#10094;
-        </button>
-        <div className="p-6">
-          <a href="#">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white font-[family-name:var(--font-geist-mono)]">
-              {currentIndex + 1}. {hobbies[currentIndex].name}
-            </h5>
-          </a>
-          <a href="#" className="flex justify-center items-center">
-            <img
-              className="rounded-t-lg mb-2 max-h-96"
-              src={hobbies[currentIndex].image}
-              alt={hobbies[currentIndex].name}
-            />
-          </a>
-          <p className="mb-3 text-gray-700 dark:text-gray-400 font-[family-name:var(--font-geist-mono)]">
-            {hobbies[currentIndex].description}
-          </p>
-        </div>
-        <button
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-500 text-white p-2 rounded-full hover:bg-gray-600"
-          onClick={handleNext}
-        >
-          &#10095;
-        </button>
-      </div>
-      <div className="font-[family-name:var(--font-geist-mono)]">
-        {" "}
-        Page {currentIndex + 1}/{hobbies.length}
-      </div>
+      <Swiper
+        direction={"vertical"}
+        slidesPerView={1}
+        spaceBetween={30}
+        mousewheel={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Mousewheel, Pagination]}
+        className="mySwiper"
+      >
+        {hobbies === null ? (
+          <Loader />
+        ) : (
+          hobbies.map((hobby) => (
+            <SwiperSlide key={hobby.id}>
+              <div className="flex flex-col md:flex-row items-center justify-center h-screen hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 font-[family-name:var(--font-geist-mono)]">
+    <div className="w-full h-full md:w-1/2 flex justify-center mb-6 md:mb-0 p-5">
+        <img
+            src={hobby.image}
+            alt={hobby.name}
+            className="max-w-full h-auto object-cover lg:rounded-l-3xl lg:rounded-r-none rounded-lg shadow-lg animate-fade-in-image"
+        />
+    </div>
+    <div className="text-center md:text-left w-full md:w-1/2 p-5">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-slide-up">
+            {hobby.name}
+        </h1>
+        <p className="lg:mt-8 text-base sm:text-lg md:text-xl lg:text-3xl text-gray-700 dark:text-gray-400 animate-fade-in-slide-up">
+            {hobby.description}
+        </p>
+    </div>
+</div>
+
+
+            </SwiperSlide>
+          ))
+        )}
+      </Swiper>
     </>
   );
-};
-
-export default HobbiesCarousel;
+}
