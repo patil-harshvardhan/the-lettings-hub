@@ -17,17 +17,17 @@ export default function Home() {
         </a>
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="/likes"
+        >
+        <FaHeart />
+          What I like
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="/achievements"
         >
           <FaStar />
           My Achievements
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="/likes"
-        >
-          <FaHeart />
-          What I like
         </a>
       </footer>
     </div>

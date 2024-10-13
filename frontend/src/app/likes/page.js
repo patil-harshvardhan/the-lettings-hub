@@ -46,15 +46,15 @@ export default function App() {
                 key={hobby.id}
               >
                 <img
-                  className="rounded-l-2xl mb-2 max-h-100"
+                  className="rounded-l-2xl mb-2 max-h-100 animate-fade-in-image"
                   src={hobby.image}
                   alt={hobby.name}
                 />
                 <div className="flex flex-col justify-between p-4 leading-normal">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white animate-fade-in-slide-up">
                     {hobby.name}
                   </h5>
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 animate-fade-in-slide-up">
                     {hobby.description}
                   </p>
                 </div>
