@@ -4,8 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./styles.css";
-
-// import required modules
 import { Mousewheel, Pagination } from "swiper/modules";
 import axios from "axios";
 import Loader from "../utils";
@@ -39,26 +37,24 @@ export default function App() {
           <Loader />
         ) : (
           hobbies.map((hobby) => (
-            <SwiperSlide>
-              <a
-                href="#"
-                className="flex flex-col items-center bg-white border border-gray-200 shadow md:flex-row md:max-w-full md:max-h-full h-full w-full  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-6 font-[family-name:var(--font-geist-mono)]"
-                key={hobby.id}
-              >
-                <img
-                  className="rounded-l-2xl mb-2 max-h-100 animate-fade-in-image"
-                  src={hobby.image}
-                  alt={hobby.name}
-                />
-                <div className="flex flex-col justify-between p-4 leading-normal">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white animate-fade-in-slide-up">
+            <SwiperSlide key={hobby.id}>
+              <div className="flex flex-col md:flex-row items-center justify-center h-screen hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 font-[family-name:var(--font-geist-mono)]">
+                <div className="w-full h-full md:w-1/2 flex justify-center mb-6 md:mb-0 p-5">
+                  <img
+                    src={hobby.image}
+                    alt={hobby.name}
+                    className="max-w-full h-auto object-cover rounded-lg shadow-lg animate-fade-in-image"
+                  />
+                </div>
+                <div className="text-center md:text-left w-full md:w-1/2 p-5">
+                  <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in-slide-up">
                     {hobby.name}
-                  </h5>
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 animate-fade-in-slide-up">
+                  </h1>
+                  <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-400 animate-fade-in-slide-up">
                     {hobby.description}
                   </p>
                 </div>
-              </a>
+              </div>
             </SwiperSlide>
           ))
         )}

@@ -16,9 +16,12 @@ const Intro = () => {
 
       {/* Introduction Text with fade-in and slide-up animation */}
       <h1 className="mt-5 text-2xl sm:text-3xl font-semibold animate-fade-in-slide-up">
-        Hi there, I am Harshvardhan, but you can call me Harsh!
+        Hi there, 
       </h1>
-      <p className="mt-3 text-base sm:text-lg leading-relaxed max-w-2xl animate-fade-in-slide-up">
+      <h1 className="mt-5 text-2xl sm:text-3xl font-semibold animate-fade-in-slide-up">
+        I am Harshvardhan, but you can call me Harsh!
+      </h1>
+      <p className="mt-4 text-base sm:text-lg leading-relaxed max-w-2xl animate-fade-in-slide-up">
         An interesting fact about my name is that while "Harsh" may mean 
         something else in English, in Sanskrit it means "Happiness." 
         My full name translates to "Creator of Happiness/Joy"!
